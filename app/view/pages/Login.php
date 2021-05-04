@@ -24,18 +24,18 @@
                 </div>
                 <div class="col-lg-7 px-5 pt-5">
                     <h1 class="font-weight-bold py-5 pl-3">YouCode</h1>
-                    <form action="">
+                    <form action="<?php echo URLROOT; ?>/pages/Login" method="POST">
                         <div class="from-row">
                             <div class="col-lg-7">
-                                <input type="email" placeholder="Email" class="form-control my-3 p-4">
+                                <input type="email" placeholder="Email" name="email" class="form-control my-3 p-4 <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>">
                             </div>
                         </div>
-                        <div class="from-row">
+                        <div class=" from-row">
                             <div class="col-lg-7">
-                                <input type="password" placeholder="password" class="form-control my-3 p-4">
+                                <input type="password" placeholder="password" name="password" class="form-control my-3 p-4 <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['password']; ?>">
                             </div>
                         </div>
-                        <div class="from-row">
+                        <div class=" from-row">
                             <div class="col-lg-7">
                                 <button type="submit" class="btn1 mt-3 mb-5" name="submit">Log in</button>
                             </div>
