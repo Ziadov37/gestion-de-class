@@ -11,7 +11,7 @@ class PageModel
 
     public function getUsers()
     {
-        $this->db->query("SELECT * FROM `user`");
+        $this->db->query("SELECT * FROM `admin`");
         $result = $this->db->resultSet();
 
         return $result;

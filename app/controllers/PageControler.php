@@ -9,6 +9,6 @@ class PageControler extends Controller
     public function getData()
     {
         $data = $this->userModel->getUsers();
-        $this->view('pages/index', $data);
+        $this->view('pages/Login', $data);
     }
 }
