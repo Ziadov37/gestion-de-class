@@ -10,20 +10,20 @@ class PageModel
     }
 
     // Login User
-    // public function login($email, $password)
-    // {
-    //     $this->db->query('SELECT * FROM `admin` WHERE email = :email');
-    //     $this->db->bind(':email', $email);
+    public function login($email, $password)
+    {
+        $this->db->query('SELECT * FROM `admin` WHERE email = :email');
+        $this->db->bind(':email', $email);
 
-    //     $row = $this->db->single();
+        $row = $this->db->single();
 
-    //     $hashed_password = $row->password;
-    //     if (password_verify($password, $hashed_password)) {
-    //         return $row;
-    //     } else {
-    //         return false;
-    //     }
-    // }
+        $hashed_password = $row->password;
+        if (password_verify($password, $hashed_password)) {
+            return $row;
+        } else {
+            return false;
+        }
+    }
 
     // Find user by email
     public function findUserByEmail($email)

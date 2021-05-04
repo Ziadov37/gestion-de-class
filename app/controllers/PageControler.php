@@ -10,7 +10,7 @@ class PageControler extends Controller
     public function index()
     {
         //load the view 
-        $data = $this->callModel->login();
+        $data = $this->userModel->login();
         $this->view('pages/Login', $data);
     }
 
@@ -32,7 +32,7 @@ class PageControler extends Controller
 
             // Validate Email
             if (empty($data['email'])) {
-                $data['email_err'] = 'Pleae enter email';
+                $data['email_err'] = 'Please enter email';
             }
 
             // Validate Password

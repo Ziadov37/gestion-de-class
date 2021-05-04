@@ -7,7 +7,7 @@
 class Core
 {
   protected $currentController = 'PageControler';
-  protected $currentMethod = 'login';
+  protected $currentMethod = 'Login';
   protected $params = [];
 
   public function __construct()
