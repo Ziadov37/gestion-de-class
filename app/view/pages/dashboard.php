@@ -98,6 +98,21 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-3">
+
+                <div class="card text-center shadow " style="width: 18rem;">
+                    <img src="<?php echo URLROOT; ?>/img/sta.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">STATISTICS</h5>
+                        <p class="card-text text-center"></p>
+                        <!-- Scrollable modal -->
+                        <!-- Button trigger modal -->
+                        <a href=""><button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                click to show statics
+                            </button></a>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
