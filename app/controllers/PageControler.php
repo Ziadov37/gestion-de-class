@@ -64,7 +64,7 @@ class PageControler extends Controller
                 // }
             } else {
                 // Load view with errors
-                $this->view('pages/Login', $data);
+                $this->view('pages/dashboard', $data);
             }
         } else {
             // Init data
