@@ -21,7 +21,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark  ">
         <div class="container-fluid ">
-            <a class="navbar-brand" href="#">Contact List</a>
+            <a class="navbar-brand" href="#">Admin Dashboard</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -62,9 +62,9 @@
                         <p class="card-text text-center"></p>
                         <!-- Scrollable modal -->
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            click to read all
-                        </button>
+                        <a href=""><button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                click to show teachers
+                            </button></a>
                     </div>
                 </div>
             </div>
@@ -77,9 +77,9 @@
                         <p class="card-text text-center"></p>
                         <!-- Scrollable modal -->
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            click to read all
-                        </button>
+                        <a href=""><button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                click to show class
+                            </button></a>
                     </div>
                 </div>
             </div>
@@ -92,9 +92,9 @@
                         <p class="card-text text-center"></p>
                         <!-- Scrollable modal -->
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            click to read all
-                        </button>
+                        <a href=""><button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                click to show students
+                            </button></a>
                     </div>
                 </div>
             </div>
