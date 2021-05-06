@@ -20,4 +20,30 @@ class StudentController extends Controller
         $data = $this->userModel->getStudent();
         $this->view('pages/student', $data);
     }
+
+    public function insertStudent()
+    {
+
+        if (!isset($_POST['submit'])) {
+            //load the view insert
+            $this->view('pages/student');
+        } else {
+            //array qui retourn le resultat envoyé par $_POST
+            $data = [
+                'fullname' => $_POST['fullname'],
+                'gender' => $_POST['gender'],
+                'class' => $_POST['class'],
+                'parent' => $_POST['parent'],
+                'adress' => $_POST['adress'],
+                'birth' => $_POST['birth'],
+                'email' => $_POST['email'],
+                'idprof' => "1",
+                'idparent' => "1"
+
+            ];
+            //consomation du data
+            $this->userModel->addUStudent($data);
+            header('location: ' . URLROOT . '/' . 'StudentController/showStudent');
+        }
+    }
 }

@@ -10,8 +10,8 @@ class AdminController extends Controller
     public function index()
     {
         //load the view 
-        $data = $this->userModel->login();
-        $this->view('pages/Login', $data);
+        $data = $this->userModel->cc();
+        $this->view('pages/dashboard', $data);
     }
 
     public function login()

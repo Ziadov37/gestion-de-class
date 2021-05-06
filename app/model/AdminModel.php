@@ -41,4 +41,8 @@ class AdminModel
             return false;
         }
     }
+
+    public function cc()
+    {
+    }
 }
