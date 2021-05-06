@@ -1,10 +1,10 @@
 <?php
 
-class PageControler extends Controller
+class AdminController extends Controller
 {
     public function __construct()
     {
-        $this->userModel = $this->model('PageModel');
+        $this->userModel = $this->model('AdminModel');
     }
 
     public function index()

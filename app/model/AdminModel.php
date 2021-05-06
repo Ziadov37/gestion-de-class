@@ -1,6 +1,6 @@
 <?php
 
-class PageModel
+class AdminModel
 {
     private $db;
 
