@@ -6,8 +6,8 @@
    */
 class Core
 {
-  protected $currentController = 'TeacherController';
-  protected $currentMethod = 'showTeacher';
+  protected $currentController = 'StudentController';
+  protected $currentMethod = 'showStudent';
   protected $params = [];
 
   public function __construct()

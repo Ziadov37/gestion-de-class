@@ -46,4 +46,16 @@ class StudentController extends Controller
             header('location: ' . URLROOT . '/' . 'StudentController/showStudent');
         }
     }
+
+    public function deleteStudent()
+    {
+
+        $data = [
+            'id' => $_GET['id']
+        ];
+
+        $this->userModel->deleteStudent($data);
+
+        header('location:' . URLROOT . '/' . 'StudentController/student');
+    }
 }

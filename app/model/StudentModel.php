@@ -44,4 +44,15 @@ class StudentModel
             return false;
         }
     }
+
+    public function deleteStudent($data)
+    {
+        $this->db->query('DELETE FROM student WHERE id = :id');
+        $this->db->bind(':id', $data['id']);
+
+
+        $row = $this->db->single();
+
+        return $row;
+    }
 }

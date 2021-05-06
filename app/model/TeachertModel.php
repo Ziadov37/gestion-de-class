@@ -40,4 +40,27 @@ class TeachertModel
             return false;
         }
     }
+
+    public function deletTeacher($data)
+    {
+        $this->db->query('DELETE FROM prof WHERE id = :id');
+        $this->db->bind(':id', $data['id']);
+
+
+        $row = $this->db->single();
+
+        return $row;
+    }
+
+    public function editTeacher($data)
+    {
+        $this->db->query("UPDATE prof SET fullname= :fullname, gender= :gender , matiere= :matiere , phone= :phone WHERE id= :id");
+        $this->db->bind(':fullname', $data['fullname']);
+        $this->db->bind(':gender', $data['gender']);
+        $this->db->bind(':matiere', $data['matiere']);
+        $this->db->bind(':phone', $data['phone']);
+        $this->db->bind(':id', $data['id']);
+        $data = $this->db->single();
+        return $data;
+    }
 }
