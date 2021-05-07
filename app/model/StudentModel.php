@@ -24,17 +24,17 @@ class StudentModel
     {
         //preparation de la query
         // :placeholders
-        $this->db->query("INSERT INTO `student`(`fullname`, `gender`, `class`, `parent`, `adress`, `birth`, `email`, `idprof`, `idparent`) VALUES (:fullname, :gender, :class,:parent,:adress, :birth, :email, :idprof, :idparent)");
+        $this->db->query("INSERT INTO `student`(`fullname`, `gender`, `class`, `parent`, `adress`, `birth`, `email`, `idprof`, `idparent`) VALUES (:name, :gender, :class,:parent,:adress, :birth, :email, :fullname, :idparent)");
 
         //saniteser contre sql injection
-        $this->db->bind(':fullname', $add['fullname']);
+        $this->db->bind(':name', $add['fullname']);
         $this->db->bind(':gender', $add['gender']);
         $this->db->bind(':class', $add['class']);
         $this->db->bind(':parent', $add['parent']);
         $this->db->bind(':adress', $add['adress']);
         $this->db->bind(':birth', $add['birth']);
         $this->db->bind(':email', $add['email']);
-        $this->db->bind(':idprof', $add['idprof']);
+        $this->db->bind(':fullname', $add['idprof']);
         $this->db->bind(':idparent', $add['idparent']);
 
         //execution
@@ -54,5 +54,14 @@ class StudentModel
         $row = $this->db->single();
 
         return $row;
+    }
+
+    public function getProf()
+    {
+        //preparation de la query
+        $this->db->query("SELECT * FROM `prof` ");
+        //execution de la query / fetch all 
+        $result = $this->db->resultSet();
+        return $result;
     }
 }

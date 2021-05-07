@@ -18,7 +18,8 @@ class StudentController extends Controller
     {
         //load the view 
         $data = $this->userModel->getStudent();
-        $this->view('pages/student', $data);
+        $datat = $this->userModel->getProf();
+        $this->view('pages/student', $data, $datat);
     }
 
     public function insertStudent()
@@ -30,14 +31,14 @@ class StudentController extends Controller
         } else {
             //array qui retourn le resultat envoyé par $_POST
             $data = [
-                'fullname' => $_POST['fullname'],
+                'fullname' => $_POST['name'],
                 'gender' => $_POST['gender'],
                 'class' => $_POST['class'],
                 'parent' => $_POST['parent'],
                 'adress' => $_POST['adress'],
                 'birth' => $_POST['birth'],
                 'email' => $_POST['email'],
-                'idprof' => "1",
+                'idprof' => $_POST['ifprof'],
                 'idparent' => "1"
 
             ];
@@ -57,5 +58,12 @@ class StudentController extends Controller
         $this->userModel->deleteStudent($data);
 
         header('location:' . URLROOT . '/' . 'StudentController/student');
+    }
+
+    public function option()
+    {
+        //load the view 
+        $data = $this->userModel->getProf();
+        $this->view('pages/student', $data);
     }
 }

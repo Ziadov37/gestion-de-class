@@ -57,7 +57,7 @@
                         <div class="mb-3">
 
                             <label for="titre" name="titre" class="col-form-label">fullname:</label>
-                            <input type="text" name="fullname" class="form-control">
+                            <input type="text" name="name" class="form-control">
                         </div>
                         <div class="mb-3">
                             <label for="description" class="col-form-label">gender:</label>
@@ -86,14 +86,22 @@
                             <label for="contenu" class="col-form-label">email:</label>
                             <input class="form-control" name="email" id="message-text">
                         </div>
-                        <button type="submit" value="submit" name="submit" style="margin-top: 20px;"
-                            class="btn btn-outline-warning btn-rounded" data-mdb-ripple-color="dark">submit</button>
+
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">prof:</label>
+                            <select class="form-control" name="ifprof">
+                                <?php foreach ($datat as $row) : ?>
+                                <option value="<?= $row->id; ?>"><?php echo  $row->fullname; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                            <button type="submit" value="submit" name="submit" style="margin-top: 20px;"
+                                class="btn btn-outline-warning btn-rounded" data-mdb-ripple-color="dark">submit</button>
 
 
+                        </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 
@@ -109,13 +117,15 @@
                 <th scope="col">Adress</th>
                 <th scope="col">Birth</th>
                 <th scope="col">Email</th>
+                <th scope="col">Prof</th>
                 <th scope="col">Update/Delete</th>
 
             </tr>
         </thead>
-        <?php foreach ($data as $row) : ?>
+
         <tbody>
             <tr>
+                <?php foreach ($data as $row) : ?>
                 <th scope="row"><?php echo $row->fullname; ?></th>
                 <td><?php echo $row->gender; ?></td>
                 <td><?php echo $row->class; ?></td>
@@ -123,6 +133,11 @@
                 <td><?php echo $row->adress; ?></td>
                 <td><?php echo $row->birth; ?></td>
                 <td><?php echo $row->email; ?></td>
+                <?php foreach ($datat as $prof) : ?>
+                <?php if ($prof->id ==  $row->idprof) : ?>
+                <td><?php echo $prof->fullname; ?></td>
+                <?php endif; ?>
+                <?php endforeach; ?>
                 <th>
                     <a href=""><button type="button" class="btn btn-warning">
                             Edit
