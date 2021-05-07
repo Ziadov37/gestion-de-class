@@ -32,8 +32,8 @@
             </button>
             <div class="collapse navbar-collapse d-flex  justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="profil.php">Profil</a>
-                    <a class="nav-link" href="contact.php">Contact</a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/StudentController/showStudent">STUDENT</a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/TeacherController/showTeacher">TEACHER</a>
                     <a class="nav-link" href="#">Logout</a>
                 </div>
             </div>
@@ -67,8 +67,8 @@
                         <p class="card-text text-center"></p>
                         <!-- Scrollable modal -->
                         <!-- Button trigger modal -->
-                        <a href=""><button type="button" class="btn btn-primary " data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop">
+                        <a href="<?php echo URLROOT; ?>/TeacherController/showTeacher"><button type="button"
+                                class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                 click to show teachers
                             </button></a>
                     </div>
@@ -99,8 +99,8 @@
                         <p class="card-text text-center"></p>
                         <!-- Scrollable modal -->
                         <!-- Button trigger modal -->
-                        <a href="student.php"><button type="button" class="btn btn-primary " data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop">
+                        <a href="<?php echo URLROOT; ?>/StudentController/showStudent"><button type="button"
+                                class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                 click to show students
                             </button></a>
                     </div>
