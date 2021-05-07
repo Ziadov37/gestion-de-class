@@ -25,19 +25,22 @@
                 </div>
                 <div class="col-lg-7 px-5 pt-5">
                     <h1 class="font-weight-bold py-5 pl-3">YouCode</h1>
-                    <form action="<?php echo URLROOT; ?>/PageControler/login" method="POST">
+                    <form action="<?php echo URLROOT; ?>/AdminController/login" method="POST">
                         <div class="from-row">
                             <div class="col-lg-7">
+                                <?php if (isset($data['email_err'])) {
+                                    echo $data['email_err'];
+                                } ?>
                                 <input type="email" placeholder="Email" name="email"
                                     class="form-control my-3 p-4 <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>"
-                                    value="<?php echo $data['email']; ?>">
+                                    value="">
                             </div>
                         </div>
                         <div class=" from-row">
                             <div class="col-lg-7">
                                 <input type="password" placeholder="password" name="password"
                                     class="form-control my-3 p-4 <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>"
-                                    value="<?php echo $data['password']; ?>">
+                                    value="">
                             </div>
                         </div>
                         <div class=" from-row">

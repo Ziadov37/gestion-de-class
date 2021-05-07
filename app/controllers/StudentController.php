@@ -16,8 +16,10 @@ class StudentController extends Controller
 
     public function showStudent()
     {
-        //load the view 
+        //  LOAD THE VIEW  // 
         $data = $this->userModel->getStudent();
+
+        //  TO GET ID PROF AS A FOREIGN KEY  //
         $datat = $this->userModel->getProf();
         $this->view('pages/student', $data, $datat);
     }
@@ -57,7 +59,7 @@ class StudentController extends Controller
 
         $this->userModel->deleteStudent($data);
 
-        header('location:' . URLROOT . '/' . 'StudentController/student');
+        header('location:' . URLROOT . '/' . 'StudentController/showStudent');
     }
 
     public function option()

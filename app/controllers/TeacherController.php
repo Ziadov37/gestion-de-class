@@ -51,7 +51,7 @@ class TeacherController extends Controller
 
         $this->userModel->deletTeacher($data);
 
-        header('location:' . URLROOT . '/' . 'TeacherController/teacher');
+        header('location:' . URLROOT . '/' . 'TeacherController/showTeacher');
     }
 
     // public function updateTeacher($id)
@@ -65,29 +65,29 @@ class TeacherController extends Controller
     // }
 
 
-    public function updateTeacher($id)
-    {
+    // public function updateTeacher($id)
+    // {
 
-        if (isset($_POST["submit"])) {
-
-
-            $data = [
-                'id' => $id,
-                'fullname' => $_POST['fullname'],
-                'gender' => $_POST['gender'],
-                'matiere' => $_POST['matiere'],
-                'phone' => $_POST['phone']
-            ];
-            $this->userModel->editTeacher($data);
-            header('location:' . URLROOT . '/' . '/TeacherController/teacher');
-            // header('location:' . URLROOT);
-        } else {
-            // $contact = $this->userModel->getContactbyId($id);
+    //     if (isset($_POST["submit"])) {
 
 
+    //         $data = [
+    //             'id' => $id,
+    //             'fullname' => $_POST['fullname'],
+    //             'gender' => $_POST['gender'],
+    //             'matiere' => $_POST['matiere'],
+    //             'phone' => $_POST['phone']
+    //         ];
+    //         $this->userModel->editTeacher($data);
+    //         header('location:' . URLROOT . '/' . '/TeacherController/teacher');
+    //         // header('location:' . URLROOT);
+    //     } else {
+    //         // $contact = $this->userModel->getContactbyId($id);
 
-            // $this->view('pages/teacher', $contact);
-            echo "by";
-        }
-    }
+
+
+    //         // $this->view('pages/teacher', $contact);
+    //         echo "by";
+    //     }
+    // }
 }

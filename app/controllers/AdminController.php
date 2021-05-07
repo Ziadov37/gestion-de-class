@@ -11,13 +11,14 @@ class AdminController extends Controller
     {
         //load the view 
         $data = $this->userModel->cc();
-        $this->view('pages/dashboard', $data);
+        $this->view('pages/login', $data);
     }
 
     public function login()
     {
         // Check for POST
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
             // Process form
             // Sanitize POST data
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -40,8 +41,10 @@ class AdminController extends Controller
                 $data['password_err'] = 'Please enter password';
             }
 
+
             // Check for user/email
             if ($this->userModel->findUserByEmail($data['email'])) {
+
                 // User found
             } else {
                 // User not found
@@ -54,17 +57,18 @@ class AdminController extends Controller
                 // Check and set logged in user
                 $loggedInUser = $this->userModel->login($data['email'], $data['password']);
 
-                // if ($loggedInUser) {
-                //     // Create Session
-                //     $this->createUserSession($loggedInUser);
-                // } else {
-                //     $data['password_err'] = 'Password incorrect';
-
-                //     $this->view('users/login', $data);
-                // }
+                if ($loggedInUser) {
+                    // Create Session
+                    $this->view('pages/dashboard');
+                } else {
+                    $data['password_err'] = 'Password incorrect';
+                    die("null");
+                    $this->view('users/login', $data);
+                }
             } else {
+
                 // Load view with errors
-                $this->view('pages/student', $data);
+                $this->view('pages/login', $data);
             }
         } else {
             // Init data

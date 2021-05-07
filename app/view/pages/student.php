@@ -32,8 +32,8 @@
             </button>
             <div class="collapse navbar-collapse d-flex  justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="profil.php">Profil</a>
-                    <a class="nav-link" href="contact.php">Contact</a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/TeacherController/showTeacher">TEACHER</a>
+                    <a class="nav-link" href="">ADMIN</a>
                     <a class="nav-link" href="#">Logout</a>
                 </div>
             </div>
@@ -142,7 +142,8 @@
                     <a href=""><button type="button" class="btn btn-warning">
                             Edit
                         </button></a>
-                    <a href=""><button type="button" class="btn btn-danger">
+                    <a href="<?php echo URLROOT; ?>/StudentController/deleteStudent?id=<?php echo $row->id; ?>"><button
+                            type="button" name="delete" class="btn btn-danger">
                             Delete
                         </button></a>
                 </th>

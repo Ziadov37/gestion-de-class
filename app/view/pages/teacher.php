@@ -32,8 +32,8 @@
             </button>
             <div class="collapse navbar-collapse d-flex  justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="">Profil</a>
-                    <a class="nav-link" href="">Contact</a>
+                    <a class="nav-link" href="./dashboard.php">DASHBOARD</a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/StudentController/showStudent">STUDENT</a>
                     <a class="nav-link" href="">Logout</a>
                 </div>
             </div>
@@ -107,61 +107,18 @@
                 <td><?php echo $row->phone; ?></td>
 
                 <th>
-                    <a href="<?php echo URLROOT; ?>/TeacherController/updateTeacher?id=<?php echo $row->id; ?>"><button
-                            type="button" name="update" class="btn btn-warning">Edit
+                    <a href=""><button type="button" name="update" class="btn btn-warning">Edit
                         </button></a>
-
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Edite Teacher</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <!------ form add episode ------>
-                                    <form action="<?php echo URLROOT; ?>/TeacherController/editeTeacher" method="post">
-                                        <div class="mb-3">
-
-                                            <label for="titre" name="titre" class="col-form-label">fullname:</label>
-                                            <input type="text" name="fullname" class="form-control">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="description" class="col-form-label">gender:</label>
-                                            <select class="form-control" name="gender">
-                                                <option>Male</option>
-                                                <option>Femal</option>
-                                            </select>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="contenu" class="col-form-label">matiere:</label>
-                                            <input class="form-control" name="matiere" id="message-text">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="contenu" class="col-form-label">phone:</label>
-                                            <input class="form-control" name="phone" id="message-text">
-                                        </div>
-                                        <button type="submit" value="submit" name="submit" style="margin-top: 20px;"
-                                            class="btn btn-outline-warning btn-rounded"
-                                            data-mdb-ripple-color="dark">submit</button>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
 
                     <a href="<?php echo URLROOT; ?>/TeacherController/deleteTeacher?id=<?php echo $row->id; ?>"><button
                             type="button" name="delete" class="btn btn-danger">
                             Delete
                         </button></a>
                 </th>
+                <?php endforeach; ?>
             </tr>
         </tbody>
-        <?php endforeach; ?>
+
     </table>
 
 
