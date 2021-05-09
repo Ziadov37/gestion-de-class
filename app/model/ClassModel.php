@@ -28,8 +28,8 @@ class TeachertModel
 
         //saniteser contre sql injection
         $this->db->bind(':name', $add['name']);
-        $this->db->bind(':gender', $add['gender']);
-        $this->db->bind(':matiere', $add['matiere']);
+        $this->db->bind(':idprof', $add['idprof']);
+        $this->db->bind(':ifstudent', $add['idstudent']);
 
 
         //execution

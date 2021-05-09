@@ -31,9 +31,8 @@ class ClassController extends Controller
             //array qui retourn le resultat envoyé par $_POST
             $data = [
                 'name' => $_POST['name'],
-                'gender' => $_POST['gender'],
-                'matiere' => $_POST['matiere'],
-                'phone' => $_POST['phone']
+                'idprof' => $_POST['idprof'],
+                'idstudent' => $_POST['idstudent']
 
             ];
             //consomation du data
