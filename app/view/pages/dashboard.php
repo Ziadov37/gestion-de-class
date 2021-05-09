@@ -34,7 +34,10 @@
                 <div class="navbar-nav">
                     <a class="nav-link" href="<?php echo URLROOT; ?>/StudentController/showStudent">STUDENT</a>
                     <a class="nav-link" href="<?php echo URLROOT; ?>/TeacherController/showTeacher">TEACHER</a>
-                    <a class="nav-link" href="#">Logout</a>
+                    <form action="logout.php" method="POST">
+                        <a class="nav-link" href="<?php echo URLROOT; ?>/AdminController/logout"><button name="logout"
+                                type="submit">Logout</button> </a>
+                    </form>
                 </div>
             </div>
         </div>

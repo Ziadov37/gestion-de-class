@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse d-flex  justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link" href="<?php echo URLROOT; ?>/TeacherController/showTeacher">TEACHER</a>
-                    <a class="nav-link" href="">ADMIN</a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/AdminController/showDashboard">ADMIN</a>
                     <a class="nav-link" href="#">Logout</a>
                 </div>
             </div>

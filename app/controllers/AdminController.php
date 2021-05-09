@@ -62,8 +62,7 @@ class AdminController extends Controller
                     $this->view('pages/dashboard');
                 } else {
                     $data['password_err'] = 'Password incorrect';
-                    die("null");
-                    $this->view('users/login', $data);
+                    $this->view('pages/login', $data);
                 }
             } else {
 
@@ -82,5 +81,22 @@ class AdminController extends Controller
             // Load view
             $this->view('pages/Login', $data);
         }
+    }
+
+    public function showDashboard()
+    {
+        //load the view 
+        $data = $this->userModel->cc();
+        $this->view('pages/dashboard', $data);
+    }
+
+    public function logout()
+    {
+        session_start();
+        session_destroy();
+        redirect('pages/Login');
+
+        $data = $this->userModel->cc();
+        $this->view('pages/dashboard', $data);
     }
 }

@@ -7,7 +7,7 @@
 class Core
 {
   protected $currentController = 'AdminController';
-  protected $currentMethod = 'index';
+  protected $currentMethod = 'login';
   protected $params = [];
 
   public function __construct()

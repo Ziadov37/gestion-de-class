@@ -32,7 +32,7 @@
             </button>
             <div class="collapse navbar-collapse d-flex  justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="./dashboard.php">DASHBOARD</a>
+                    <a class="nav-link" href="<?php echo URLROOT; ?>/AdminController/showDashboard">DASHBOARD</a>
                     <a class="nav-link" href="<?php echo URLROOT; ?>/StudentController/showStudent">STUDENT</a>
                     <a class="nav-link" href="">Logout</a>
                 </div>
