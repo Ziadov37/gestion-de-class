@@ -1,6 +1,6 @@
 <?php
 
-class TeachertModel
+class ClassModel
 {
     private $db;
 
@@ -24,7 +24,7 @@ class TeachertModel
     {
         //preparation de la query
         // :placeholders
-        $this->db->query("INSERT INTO `class`(`name`, `gender`, `matiere`) VALUES (:name, :gender, :matiere)");
+        $this->db->query("INSERT INTO `class`(`name`, `gender`, `matiere`) VALUES (:name, :idprof, :ifstudent)");
 
         //saniteser contre sql injection
         $this->db->bind(':name', $add['name']);

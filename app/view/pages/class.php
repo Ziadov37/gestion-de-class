@@ -48,11 +48,11 @@
     <div class="container">
         <div class="title text-center my-5">
             <h1 class="my-4">ADMIN</h1>
-            <p>
+            <!-- <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo minus dolorum voluptatum, ullam
                 facere sint fugit sit eaque aliquam odio quam incidunt error. Error, quae aspernatur veritatis
                 assumenda laboriosam pariatur?
-            </p>
+            </p> -->
         </div>
 
 
@@ -60,72 +60,24 @@
 
         <!-- <div class="test"> -->
         <div class="row justify-content-center my-5">
-
+            <?php foreach ($data as $row) : ?>
             <div class="col-md-3">
 
                 <div class="card text-center shadow " style="width: 18rem;">
                     <img src="<?php echo URLROOT; ?>/img/prof.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">TEACHERS</h5>
+                        <h5 class="card-title"><?php echo $row->name; ?></h5>
                         <p class="card-text text-center"></p>
                         <!-- Scrollable modal -->
                         <!-- Button trigger modal -->
-                        <a href="<?php echo URLROOT; ?>/TeacherController/showTeacher"><button type="button"
+                        <!-- <a href="/TeacherController/showTeacher"><button type="button"
                                 class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                 click to show teachers
-                            </button></a>
+                            </button></a> -->
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-
-                <div class="card text-center shadow " style="width: 18rem;">
-                    <img src="<?php echo URLROOT; ?>/img/class.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">CLASS</h5>
-                        <p class="card-text text-center"></p>
-                        <!-- Scrollable modal -->
-                        <!-- Button trigger modal -->
-                        <a href="<?php echo URLROOT; ?>/ClassController/showClass"><button type="button"
-                                class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                click to show class
-                            </button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-
-                <div class="card text-center shadow " style="width: 18rem;">
-                    <img src="<?php echo URLROOT; ?>/img/student.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">STUDENTS</h5>
-                        <p class="card-text text-center"></p>
-                        <!-- Scrollable modal -->
-                        <!-- Button trigger modal -->
-                        <a href="<?php echo URLROOT; ?>/StudentController/showStudent"><button type="button"
-                                class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                click to show students
-                            </button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-
-                <div class="card text-center shadow " style="width: 18rem;">
-                    <img src="<?php echo URLROOT; ?>/img/sta.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">STATISTICS</h5>
-                        <p class="card-text text-center"></p>
-                        <!-- Scrollable modal -->
-                        <!-- Button trigger modal -->
-                        <a href=""><button type="button" class="btn btn-primary " data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop">
-                                click to show statics
-                            </button></a>
-                    </div>
-                </div>
-            </div>
-
+            <?php endforeach; ?>
         </div>
 
 </body>

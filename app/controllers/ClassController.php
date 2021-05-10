@@ -4,7 +4,7 @@ class ClassController extends Controller
 {
     public function __construct()
     {
-        $this->userModel = $this->model('ClasstModel');
+        $this->userModel = $this->model('ClassModel');
     }
 
     // public function index()
