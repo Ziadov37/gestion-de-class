@@ -24,12 +24,11 @@ class ClassModel
     {
         //preparation de la query
         // :placeholders
-        $this->db->query("INSERT INTO `class`(`name`, `gender`, `matiere`) VALUES (:name, :idprof, :ifstudent)");
+        $this->db->query("INSERT INTO `class`(`name`, `idprof`) VALUES (:name, :idprof)");
 
         //saniteser contre sql injection
         $this->db->bind(':name', $add['name']);
         $this->db->bind(':idprof', $add['idprof']);
-        $this->db->bind(':ifstudent', $add['idstudent']);
 
 
         //execution
@@ -62,4 +61,13 @@ class ClassModel
     //     $data = $this->db->single();
     //     return $data;
     // }
+
+    public function getProf()
+    {
+        //preparation de la query
+        $this->db->query("SELECT * FROM `prof` ");
+        //execution de la query / fetch all 
+        $result = $this->db->resultSet();
+        return $result;
+    }
 }

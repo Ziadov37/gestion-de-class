@@ -74,6 +74,12 @@
                             <label for="contenu" class="col-form-label">phone:</label>
                             <input class="form-control" name="phone" id="message-text">
                         </div>
+                        <label for="description" class="col-form-label">class:</label>
+                        <select class="form-control" name="class">
+                            <?php foreach ($datat as $row) : ?>
+                            <option value="<?= $row->id; ?>"><?php echo  $row->name; ?></option>
+                            <?php endforeach; ?>
+                        </select>
                         <button type="submit" value="submit" name="submit" style="margin-top: 20px;"
                             class="btn btn-outline-warning btn-rounded" data-mdb-ripple-color="dark">submit</button>
 
@@ -94,6 +100,7 @@
                 <th scope="col">Gender</th>
                 <th scope="col">matiere</th>
                 <th scope="col">phone</th>
+                <th scope="col">class</th>
                 <th scope="col">Update/Delete</th>
 
             </tr>
@@ -105,7 +112,11 @@
                 <td><?php echo $row->gender; ?></td>
                 <td><?php echo $row->matiere; ?></td>
                 <td><?php echo $row->phone; ?></td>
-
+                <?php foreach ($datat as $class) : ?>
+                <?php if ($class->id ==  $row->idclass) : ?>
+                <td><?php echo $class->name; ?></td>
+                <?php endif; ?>
+                <?php endforeach; ?>
                 <th>
                     <a href=""><button type="button" name="update" class="btn btn-warning">Edit
                         </button></a>

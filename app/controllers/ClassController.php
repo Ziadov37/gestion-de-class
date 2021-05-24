@@ -18,7 +18,10 @@ class ClassController extends Controller
     {
         //load the view 
         $data = $this->userModel->getClass();
-        $this->view('pages/class', $data);
+
+        //  TO GET ID PROF AS A FOREIGN KEY  //
+        $datat = $this->userModel->getProf();
+        $this->view('pages/class', $data, $datat);
     }
 
     public function insertClass()
@@ -31,8 +34,7 @@ class ClassController extends Controller
             //array qui retourn le resultat envoyé par $_POST
             $data = [
                 'name' => $_POST['name'],
-                'idprof' => $_POST['idprof'],
-                'idstudent' => $_POST['idstudent']
+                'idprof' => $_POST['idprof']
 
             ];
             //consomation du data

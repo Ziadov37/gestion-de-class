@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,12 +68,13 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="contenu" class="col-form-label">class:</label>
-                            <input class="form-control" name="class" id="message-text">
-                        </div>
-                        <div class="mb-3">
-                            <label for="contenu" class="col-form-label">parent:</label>
-                            <input class="form-control" name="parent" id="message-text">
+                            <label for="description" class="col-form-label">parent:</label>
+                            <select class="form-control" name="idparent">
+                                <?php foreach ($data['parent'] as $row) : ?>
+                                <option value="<?= $row->id; ?>"><?php echo  $row->fullname; ?>
+                                </option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="contenu" class="col-form-label">adress:</label>
@@ -89,8 +91,8 @@
 
                         <div class="mb-3">
                             <label for="description" class="col-form-label">prof:</label>
-                            <select class="form-control" name="ifprof">
-                                <?php foreach ($datat as $row) : ?>
+                            <select class="form-control" name="idprof">
+                                <?php foreach ($data['prof'] as $row) : ?>
                                 <option value="<?= $row->id; ?>"><?php echo  $row->fullname; ?></option>
                                 <?php endforeach; ?>
                             </select>
@@ -112,8 +114,7 @@
             <tr>
                 <th scope="col">Full name</th>
                 <th scope="col">Gender</th>
-                <th scope="col">Class</th>
-                <th scope="col">Prent</th>
+                <th scope="col">Parent</th>
                 <th scope="col">Adress</th>
                 <th scope="col">Birth</th>
                 <th scope="col">Email</th>
@@ -125,29 +126,38 @@
 
         <tbody>
             <tr>
-                <?php foreach ($data as $row) : ?>
-                <th scope="row"><?php echo $row->fullname; ?></th>
+                <?php foreach ($data['student'] as $row) : ?>
+                <td scope="row"><?php echo $row->fullname; ?></td>
                 <td><?php echo $row->gender; ?></td>
-                <td><?php echo $row->class; ?></td>
-                <td><?php echo $row->parent; ?></td>
+                <?php foreach ($data['parent'] as $parent) : ?>
+                <?php if ($parent->id ==  $row->idparent) : ?>
+                <td><?php echo $parent->fullname; ?></td>
+                <?php endif; ?>
+                <?php endforeach; ?>
+
+
                 <td><?php echo $row->adress; ?></td>
                 <td><?php echo $row->birth; ?></td>
                 <td><?php echo $row->email; ?></td>
-                <?php foreach ($datat as $prof) : ?>
+                <?php foreach ($data['prof'] as $prof) : ?>
                 <?php if ($prof->id ==  $row->idprof) : ?>
                 <td><?php echo $prof->fullname; ?></td>
+                <td> <a href="<?php echo URLROOT; ?>/StudentController/updateStudentt?id=<?php echo $row->id; ?>"><button
+                            type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            data-bs-whatever="@getbootstrap">Update</button>
+                        <a href="<?php echo URLROOT; ?>/StudentController/deleteStudent?id=<?php echo $row->id; ?>"><button
+                                type="button" name="delete" class="btn btn-danger">
+                                Delete
+                            </button></a>
+
+                </td>
+
                 <?php endif; ?>
                 <?php endforeach; ?>
-                <th>
-                    <a href=""><button type="button" class="btn btn-warning">
-                            Edit
-                        </button></a>
-                    <a href="<?php echo URLROOT; ?>/StudentController/deleteStudent?id=<?php echo $row->id; ?>"><button
-                            type="button" name="delete" class="btn btn-danger">
-                            Delete
-                        </button></a>
-                </th>
-            </tr>
+
+
+
+
         </tbody>
         <?php endforeach; ?>
     </table>

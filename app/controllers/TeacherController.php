@@ -18,7 +18,9 @@ class TeacherController extends Controller
     {
         //load the view 
         $data = $this->userModel->getTeacher();
-        $this->view('pages/teacher', $data);
+
+        $datat = $this->userModel->getClass();
+        $this->view('pages/teacher', $data, $datat);
     }
 
     public function insertTeacher()
@@ -33,7 +35,8 @@ class TeacherController extends Controller
                 'fullname' => $_POST['fullname'],
                 'gender' => $_POST['gender'],
                 'matiere' => $_POST['matiere'],
-                'phone' => $_POST['phone']
+                'phone' => $_POST['phone'],
+                'idclass' => $_POST['class']
 
             ];
             //consomation du data

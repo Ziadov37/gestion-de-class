@@ -86,7 +86,7 @@
                         <p class="card-text text-center"></p>
                         <!-- Scrollable modal -->
                         <!-- Button trigger modal -->
-                        <a href="<?php echo URLROOT; ?>/ClassController/showClass"><button type="button"
+                        <a href="<?php echo URLROOT; ?>/ParentController/showParent"><button type="button"
                                 class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                 click to show class
                             </button></a>

@@ -24,13 +24,14 @@ class TeachertModel
     {
         //preparation de la query
         // :placeholders
-        $this->db->query("INSERT INTO `prof`(`fullname`, `gender`, `matiere`, `phone`) VALUES (:fullname, :gender, :matiere, :phone)");
+        $this->db->query("INSERT INTO `prof`(`fullname`, `gender`, `matiere`, `phone`, `idclass`) VALUES (:fullname, :gender, :matiere, :phone, :name)");
 
         //saniteser contre sql injection
         $this->db->bind(':fullname', $add['fullname']);
         $this->db->bind(':gender', $add['gender']);
         $this->db->bind(':matiere', $add['matiere']);
         $this->db->bind(':phone', $add['phone']);
+        $this->db->bind(':name', $add['idclass']);
 
 
         //execution
@@ -63,4 +64,13 @@ class TeachertModel
     //     $data = $this->db->single();
     //     return $data;
     // }
+
+    public function getClass()
+    {
+        //preparation de la query
+        $this->db->query("SELECT * FROM `class` ");
+        //execution de la query / fetch all 
+        $result = $this->db->resultSet();
+        return $result;
+    }
 }

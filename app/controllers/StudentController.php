@@ -17,11 +17,23 @@ class StudentController extends Controller
     public function showStudent()
     {
         //  LOAD THE VIEW  // 
+
+
+
         $data = $this->userModel->getStudent();
 
         //  TO GET ID PROF AS A FOREIGN KEY  //
+
         $datat = $this->userModel->getProf();
-        $this->view('pages/student', $data, $datat);
+        $datatt = $this->userModel->getParent();
+
+        $doto = [
+            'student' => $data,
+            'prof' => $datat,
+            'parent' => $datatt
+
+        ];
+        $this->view('pages/student', $doto);
     }
 
     public function insertStudent()
@@ -35,13 +47,11 @@ class StudentController extends Controller
             $data = [
                 'fullname' => $_POST['name'],
                 'gender' => $_POST['gender'],
-                'class' => $_POST['class'],
-                'parent' => $_POST['parent'],
                 'adress' => $_POST['adress'],
                 'birth' => $_POST['birth'],
                 'email' => $_POST['email'],
-                'idprof' => $_POST['ifprof'],
-                'idparent' => "1"
+                'idprof' => $_POST['idprof'],
+                'idparent' => $_POST['idparent']
 
             ];
             //consomation du data
@@ -62,10 +72,37 @@ class StudentController extends Controller
         header('location:' . URLROOT . '/' . 'StudentController/showStudent');
     }
 
-    public function option()
+    // public function option()
+    // {
+    //     //load the view 
+    //     $data = $this->userModel->getProf();
+    //     $this->view('pages/student', $data);
+    // }
+
+    public function updateStudent($id)
     {
-        //load the view 
-        $data = $this->userModel->getProf();
-        $this->view('pages/student', $data);
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $data = [
+                'id' => $id,
+                'fullname' => $_POST['name'],
+                'gender' => $_POST['gender'],
+                'parent' => $_POST['parent'],
+                'adress' => $_POST['adress'],
+                'birth' => $_POST['birth'],
+                'email' => $_POST['email'],
+                'idprof' => $_POST['idprof'],
+                'idparent' => $_POST['idparent']
+
+            ];
+            $this->userModel->updateStudent($data);
+            header('location:' . URLROOT . '/' . 'pages/student');
+        } else {
+
+
+            $data = $this->userModel->getPostbyId($id);
+
+            $this->view('pages/student', $data);
+        }
     }
 }

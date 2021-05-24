@@ -43,6 +43,43 @@
         </div>
     </nav>
 
+    <!-- add button and form -->
+    <button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        data-bs-whatever="@getbootstrap">Add Class</button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Class</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!------ form add episode ------>
+                    <form action="<?php echo URLROOT; ?>/ClassController/insertClass" method="post">
+                        <div class="mb-3">
+
+                            <label for="titre" name="titre" class="col-form-label">Name:</label>
+                            <input type="text" name="name" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">prof:</label>
+                            <select class="form-control" name="idprof">
+                                <?php foreach ($datat as $row) : ?>
+                                <option value="<?= $row->id; ?>"><?php echo  $row->fullname; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                            <button type="submit" value="submit" name="submit" style="margin-top: 20px;"
+                                class="btn btn-outline-warning btn-rounded" data-mdb-ripple-color="dark">submit</button>
+
+
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <div class="container">
