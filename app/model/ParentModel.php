@@ -64,20 +64,38 @@ class ParentModel
         return $result;
     }
 
-    public function editBlog($data)
+    // public function editBlog($data)
+    // {
+    //     $this->db->query('UPDATE blog SET fullname = :name, gender = :gender, job = :job, adress = :adress, phone = :phone, idstudent = :idstudent,    WHERE id = :id');
+    //     // Bind values
+    //     $this->db->bind(':id', $data['id']);
+    //     $this->db->bind(':fullname', $data['name']);
+    //     $this->db->bind(':gender', $data['gender']);
+    //     $this->db->bind(':job', $data['job']);
+    //     $this->db->bind(':adress', $data['adress']);
+    //     $this->db->bind(':phone', $data['phone']);
+    //     $this->db->bind(':idstudent', $data['idstudent']);
+
+
+    //     // Execute
+    //     if ($this->db->execute()) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+
+    public function updateStudent($update)
     {
-        $this->db->query('UPDATE blog SET fullname = :name, gender = :gender, job = :job, adress = :adress, phone = :phone, idstudent = :idstudent,    WHERE id = :id');
-        // Bind values
-        $this->db->bind(':id', $data['id']);
-        $this->db->bind(':fullname', $data['name']);
-        $this->db->bind(':gender', $data['gender']);
-        $this->db->bind(':job', $data['job']);
-        $this->db->bind(':adress', $data['adress']);
-        $this->db->bind(':phone', $data['phone']);
-        $this->db->bind(':idstudent', $data['idstudent']);
-
-
-        // Execute
+        $this->db->query("UPDATE parent  SET fullname = :name, gender = :gender, job = :job, adress = :adress, phone = :phone, idstudent = :idstudent,    WHERE id = :id");
+        $this->db->bind(':id', $update['id']);
+        $this->db->bind(':fullname', $update['name']);
+        $this->db->bind(':gender', $update['gender']);
+        $this->db->bind(':job', $update['job']);
+        $this->db->bind(':adress', $update['adress']);
+        $this->db->bind(':phone', $update['phone']);
+        $this->db->bind(':idstudent', $update['idstudent']);
+        $update = $this->db->execute();
         if ($this->db->execute()) {
             return true;
         } else {

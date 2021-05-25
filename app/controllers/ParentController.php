@@ -88,31 +88,56 @@ class ParentController extends Controller
 
     //         }
 
-    public function edit($id)
+    // public function edit($id)
+    // {
+    //     if (!isset($_POST['edit'])) {
+    //         $articl = $this->userModel->getContactById($id);
+    //         $this->view('pages/edit', $articl);
+    //     }
+    // }
+
+    // public function editid($id)
+    // {
+    //     // if(isset($_POST['edit'])){
+    //     // Sanitize POST array
+    //     $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+    //     $data = [
+    //         'id' => $id,
+    //         'fullname' => trim($_POST['name']),
+    //         'gender' => trim($_POST['gender']),
+    //         'job' => trim($_POST['job']),
+    //         'adress' => trim($_POST['adress']),
+    //         'phone' => trim($_POST['phone']),
+    //         'idstudent' => trim($_POST['idstudent'])
+
+    //     ];
+    //     $this->userModel->editBlog($data);
+    //     redirect('parent');
+    // }
+
+
+    public function updateParent($id)
     {
-        if (!isset($_POST['edit'])) {
-            $articl = $this->userModel->getContactById($id);
-            $this->view('pages/parent', $articl);
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $data = [
+                'id' => $id,
+                'fullname' => $_POST['name'],
+                'gender' => $_POST['gender'],
+                'job' => $_POST['job'],
+                'adress' => $_POST['adress'],
+                'phone' => $_POST['phone'],
+                'idstudent' => $_POST['idstudent']
+            ];
+            $this->userModel->updateParent($data);
+            header('location:' . URLROOT . '/' . 'pages/parent');
+        } else {
+
+
+            $data = $this->userModel->getPostbyId($id);
+
+            $this->view('pages/edit', $data);
         }
-    }
-
-    public function editid($id)
-    {
-        // if(isset($_POST['edit'])){
-        // Sanitize POST array
-        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-        $data = [
-            'id' => $id,
-            'fullname' => trim($_POST['name']),
-            'gender' => trim($_POST['gender']),
-            'job' => trim($_POST['job']),
-            'adress' => trim($_POST['adress']),
-            'phone' => trim($_POST['phone']),
-            'idstudent' => trim($_POST['idstudent'])
-
-        ];
-        $this->userModel->editBlog($data);
-        redirect('parent');
     }
 }

@@ -118,7 +118,7 @@
         <tbody>
             <tr>
                 <?php foreach ($data as $row) : ?>
-                <th scope="row"><?php echo $row->fullname; ?></th>
+                <td scope="row"><?php echo $row->fullname; ?></td>
                 <td><?php echo $row->gender; ?></td>
                 <td><?php echo $row->job; ?></td>
                 <td><?php echo $row->adress; ?></td>
@@ -128,73 +128,16 @@
                 <td><?php echo $student->fullname; ?></td>
                 <?php endif; ?>
                 <?php endforeach; ?>
-                <th>
+                <td>
                     <a href="<?php echo URLROOT; ?>/ParentController/edit?id=<?php echo $row->id; ?>"><button
                             type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
                             data-bs-whatever="@getbootstrap" name="edite">Edit</button>
 
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">New Parent</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <!------ form add episode ------>
-                                        <form action="<?php echo URLROOT; ?>/ParentController/insertParent"
-                                            method="post">
-                                            <div class="mb-3">
-
-                                                <label for="titre" name="titre" class="col-form-label">fullname:</label>
-                                                <input type="text" name="name" class="form-control">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="description" class="col-form-label">gender:</label>
-                                                <select class="form-control" name="gender">
-                                                    <option>Male</option>
-                                                    <option>Femal</option>
-                                                </select>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="contenu" class="col-form-label">Job:</label>
-                                                <input class="form-control" name="job" id="message-text">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="contenu" class="col-form-label">adress:</label>
-                                                <input class="form-control" name="adress" id="message-text">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="contenu" class="col-form-label">phone:</label>
-                                                <input class="form-control" name="phone" id="message-text">
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="description" class="col-form-label">student:</label>
-                                                <select class="form-control" name="idstudent">
-                                                    <?php foreach ($datat as $row) : ?>
-                                                    <option value="<?= $row->id; ?>"><?php echo  $row->fullname; ?>
-                                                    </option>
-                                                    <?php endforeach; ?>
-                                                </select>
-                                                <button type="submit" value="submit" name="submit"
-                                                    style="margin-top: 20px;"
-                                                    class="btn btn-outline-warning btn-rounded"
-                                                    data-mdb-ripple-color="dark">submit</button>
-
-
-                                            </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <a href="<?php echo URLROOT; ?>/ParentController/deleteParent?id=<?php echo $row->id; ?>"><button
                                 type="button" name="delete" class="btn btn-danger">
                                 Delete
                             </button></a>
-                </th>
+                </td>
             </tr>
         </tbody>
         <?php endforeach; ?>

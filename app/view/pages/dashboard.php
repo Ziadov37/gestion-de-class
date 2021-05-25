@@ -82,13 +82,13 @@
                 <div class="card text-center shadow " style="width: 18rem;">
                     <img src="<?php echo URLROOT; ?>/img/class.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">CLASS</h5>
+                        <h5 class="card-title">PARENT</h5>
                         <p class="card-text text-center"></p>
                         <!-- Scrollable modal -->
                         <!-- Button trigger modal -->
                         <a href="<?php echo URLROOT; ?>/ParentController/showParent"><button type="button"
                                 class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                click to show class
+                                click to show Parent
                             </button></a>
                     </div>
                 </div>
