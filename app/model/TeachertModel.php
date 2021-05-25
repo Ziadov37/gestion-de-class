@@ -73,4 +73,27 @@ class TeachertModel
         $result = $this->db->resultSet();
         return $result;
     }
+    // public function search()
+    // {
+    //     if (isset($_POST['search'])) {
+    //         $searchkey = $_POST['search'];
+    //         $sql = "SELECT * FROM prof WHERE fullname LIKE '%$searchkey%'";
+    //     } else {
+    //         $sql = "SELECT * FROM prof";
+    //     }
+    // }
+
+    public function search()
+    {
+
+        if (isset($_POST['search'])) {
+
+            $key = $_POST['search'];
+            $this->db->query("SELECT * FROM prof WHERE fullname LIKE '$key' OR gender LIKE '$key' OR matiere LIKE '$key' OR phone LIKE '$key' OR idclass LIKE '$key' ");
+            $searchresult = $this->db->resultSet();
+            return $searchresult;
+        } else {
+            die('Not Found');
+        }
+    }
 }

@@ -7,13 +7,6 @@ class TeacherController extends Controller
         $this->userModel = $this->model('TeachertModel');
     }
 
-    // public function index()
-    // {
-    //     //load the view 
-    //     $data = $this->userModel->getStudent();
-    //     $this->view('pages/Login', $data);
-    // }
-
     public function showTeacher()
     {
         //load the view 
@@ -93,4 +86,25 @@ class TeacherController extends Controller
     //         echo "by";
     //     }
     // }
+
+    public function search()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if ($data = $this->userModel->search()) {
+
+                $this->view('teacher/search', $data);
+
+
+                // if ($stmt->rowCount() > 0) {
+                //     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                //         extract($row);
+                //         $this->view('dashboards/search', $data);
+            } else {
+                $data = [
+                    "Search not found"
+                ];
+            }
+        }
+    }
 }

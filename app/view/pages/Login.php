@@ -9,9 +9,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <!--  CSS  -->
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
 
+    <!-- JavaScript -->
+    <script src="<?php echo URLROOT; ?>/js/validation.js"></script>
+
+    <!-- Title -->
     <title>Login Page</title>
 </head>
 
@@ -25,20 +30,20 @@
                 </div>
                 <div class="col-lg-7 px-5 pt-5">
                     <h1 class="font-weight-bold py-5 pl-3">YouCode</h1>
-                    <form action="<?php echo URLROOT; ?>/AdminController/login" method="POST">
+                    <form action="<?php echo URLROOT; ?>/AdminController/login" method="POST" id="form">
                         <div class="from-row">
                             <div class="col-lg-7">
                                 <?php if (isset($data['email_err'])) {
                                     echo $data['email_err'];
                                 } ?>
-                                <input type="email" placeholder="Email" name="email"
+                                <input type="email" placeholder="Email" name="email" id="email"
                                     class="form-control my-3 p-4 <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>"
                                     value="">
                             </div>
                         </div>
                         <div class=" from-row">
                             <div class="col-lg-7">
-                                <input type="password" placeholder="password" name="password"
+                                <input type="password" placeholder="password" name="password" id="password"
                                     class="form-control my-3 p-4 <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>"
                                     value="">
                             </div>
