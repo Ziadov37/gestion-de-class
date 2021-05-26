@@ -16,6 +16,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
         integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
     </script>
+
+    <!-- DATA TABLE -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+
+
+
     <link rel="stylesheet" href="">
     <title>Dashboard Admin</title>
 </head>
@@ -44,10 +55,6 @@
     <button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
         data-bs-whatever="@getbootstrap">Add Teacher</button>
 
-    <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
 
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -99,7 +106,7 @@
 
 
 
-    <table class="table mt-5">
+    <table class="table mt-5" style="width: 100em; margin: auto">
         <thead class="table-dark">
             <tr>
                 <th scope="col">Full name</th>
@@ -138,6 +145,11 @@
 
     </table>
 
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('table').DataTable();
+    });
+    </script>
 
 
 

@@ -13,8 +13,7 @@
     <!--  CSS  -->
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">
 
-    <!-- JavaScript -->
-    <script src="<?php echo URLROOT; ?>/js/validation.js"></script>
+
 
     <!-- Title -->
     <title>Login Page</title>
@@ -75,7 +74,8 @@
 
 
 
-
+    <!-- JavaScript -->
+    <script src="<?php echo URLROOT; ?>/js/validation.js"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
