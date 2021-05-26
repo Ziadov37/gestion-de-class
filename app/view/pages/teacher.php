@@ -118,8 +118,8 @@
 
             </tr>
         </thead>
-        <?php foreach ($data as $row) : ?>
         <tbody>
+            <?php foreach ($data as $row) : ?>
             <tr>
                 <th scope="row"><?php echo $row->fullname; ?></th>
                 <td><?php echo $row->gender; ?></td>
@@ -139,8 +139,8 @@
                             Delete
                         </button></a>
                 </th>
-                <?php endforeach; ?>
             </tr>
+            <?php endforeach; ?>
         </tbody>
 
     </table>

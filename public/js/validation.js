@@ -1,21 +1,21 @@
-const email= document.getElementById('email')
-const password= document.getElementById('password')
-const form= document.getElementById('form')
-const errorElement= document.getElementById('error')
 
-form.addEventListener('submit' , (e) =>  {
-    let messeges = []
+// const form= document.getElementById('form')
+// form.addEventListener('submit' , (e) =>  {
+//     e.preventDefault();
 
-    if(email.value === ''|| email.value == null){
-        messeges.push('Email is required')
-    }
+//     const email= document.getElementById('email')
+//     const password= document.getElementById('password')
+//     const emailError = document.getElementById('email-error')
+//     const passwordError = document.getElementById('password-error')
 
-    if(password.value.length <= 4){
-        messeges.push('Password must be longer than 4 characters')
-    }
-    if(messeges.length>0){
-        e.preventDefault()
-        errorElement.innerText=messeges.join(',')
-    }
-    
-})
+//     if(email.value == ''|| email.value == null){
+//         emailError.textContent = "Email field is empty!";
+//         emailError.classList.add('alert','alert-danger')
+//     }
+
+//     if(password.value.length <= 4){
+//         passwordError.textContent = "Password have to be more than 4 characters!";
+//         passwordError.classList.add('alert','alert-danger')
+//     }
+
+// })

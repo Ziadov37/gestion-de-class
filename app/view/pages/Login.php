@@ -38,6 +38,7 @@
                                 <input type="email" placeholder="Email" name="email" id="email"
                                     class="form-control my-3 p-4 <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>"
                                     value="">
+                                <div id="email-error"></div>
                             </div>
                         </div>
                         <div class=" from-row">
@@ -45,6 +46,7 @@
                                 <input type="password" placeholder="password" name="password" id="password"
                                     class="form-control my-3 p-4 <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>"
                                     value="">
+                                <div id="password-error"></div>
                             </div>
                         </div>
                         <div class=" from-row">
@@ -75,7 +77,7 @@
 
 
     <!-- JavaScript -->
-    <script src="<?php echo URLROOT; ?>/js/validation.js"></script>
+    <!-- <script src="<?php echo URLROOT; ?>/js/validation.js"></script> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

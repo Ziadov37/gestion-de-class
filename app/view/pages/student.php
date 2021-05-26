@@ -17,6 +17,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
         integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
     </script>
+
+    <!-- DATA TABLE -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+
+
+
     <link rel="stylesheet" href="">
     <title>Dashboard Admin</title>
 </head>
@@ -125,8 +136,9 @@
         </thead>
 
         <tbody>
+            <?php foreach ($data['student'] as $row) : ?>
             <tr>
-                <?php foreach ($data['student'] as $row) : ?>
+
                 <td scope="row"><?php echo $row->fullname; ?></td>
                 <td><?php echo $row->gender; ?></td>
                 <?php foreach ($data['parent'] as $parent) : ?>
@@ -152,16 +164,20 @@
 
                 </td>
 
-                <?php endif; ?>
-                <?php endforeach; ?>
 
-
-
+            </tr>
+            <?php endif; ?>
+            <?php endforeach; ?>
+            <?php endforeach; ?>
 
         </tbody>
-        <?php endforeach; ?>
-    </table>
 
+    </table>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('table').DataTable();
+    });
+    </script>
 
 
 
