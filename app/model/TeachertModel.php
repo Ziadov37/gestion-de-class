@@ -77,7 +77,7 @@ class TeachertModel
 
     public function updatePost($params)
     {
-        $this->db->query("UPDATE prof SET fullname= :fullname, gender= :gender , matiere= :matiere , phone= :phone WHERE id= :id");
+        $this->db->query("UPDATE prof SET fullname= :fullname, gender= :gender , matiere= :matiere , phone= :phone,  idclass= :name WHERE id= :id");
         // $this->database->bind(':titre', $params['titre']);
         // $this->database->bind(':contenu', $params['contenu']);
         // $this->database->bind(':description', $params['description']);

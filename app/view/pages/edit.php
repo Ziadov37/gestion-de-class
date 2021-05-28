@@ -65,7 +65,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">class</label>
-            <input type="text" name="idclass" class="form-control" value="<? $data->name;  ?>"
+            <input type="text" name="class" class="form-control" value="<?= $data->idclass;  ?>"
                 id="exampleInputPassword1" placeholder="class">
         </div>
 
