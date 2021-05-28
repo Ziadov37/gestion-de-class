@@ -73,27 +73,37 @@ class TeachertModel
         $result = $this->db->resultSet();
         return $result;
     }
-    // public function search()
-    // {
-    //     if (isset($_POST['search'])) {
-    //         $searchkey = $_POST['search'];
-    //         $sql = "SELECT * FROM prof WHERE fullname LIKE '%$searchkey%'";
-    //     } else {
-    //         $sql = "SELECT * FROM prof";
-    //     }
-    // }
 
-    public function search()
+
+    public function updatePost($params)
     {
-
-        if (isset($_POST['search'])) {
-
-            $key = $_POST['search'];
-            $this->db->query("SELECT * FROM prof WHERE fullname LIKE '$key' OR gender LIKE '$key' OR matiere LIKE '$key' OR phone LIKE '$key' OR idclass LIKE '$key' ");
-            $searchresult = $this->db->resultSet();
-            return $searchresult;
+        $this->db->query("UPDATE prof SET fullname= :fullname, gender= :gender , matiere= :matiere , phone= :phone WHERE id= :id");
+        // $this->database->bind(':titre', $params['titre']);
+        // $this->database->bind(':contenu', $params['contenu']);
+        // $this->database->bind(':description', $params['description']);
+        // $this->database->bind(':id', $params['id']);
+        $this->db->bind(':fullname', $params['fullname']);
+        $this->db->bind(':gender', $params['gender']);
+        $this->db->bind(':matiere', $params['matiere']);
+        $this->db->bind(':phone', $params['phone']);
+        $this->db->bind(':name', $params['idclass']);
+        $this->db->bind(':id', $params['id']);
+        $params = $this->db->execute();
+        if ($this->db->execute()) {
+            return true;
         } else {
-            die('Not Found');
+            return false;
         }
+    }
+
+
+    public function getPostbyId($id)
+    {
+        $this->db->query("SELECT * FROM prof WHERE id = :id");
+        $this->db->bind(':id', $id);
+
+        $results = $this->db->single();
+
+        return $results;
     }
 }

@@ -16,16 +16,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
         integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="<?php echo URLROOT ?> /css/style.css ?">
     <title>Dashboard Admin</title>
 </head>
 
 <body>
     <!-- header -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark  ">
-        <div class="container-fluid ">
-            <a class="navbar-brand" href="#">Admin Dashboard</a>
+    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div class=" container-fluid ">
+            <a class=" navbar-brand" href="#">Admin Dashboard</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -59,11 +59,11 @@
 
 
         <!-- <div class="test"> -->
-        <div class="row justify-content-center my-5">
+        <div class="row  my-6" style="justify-content:space-around">
 
-            <div class="col-md-3">
+            <div class="col-md-2">
 
-                <div class="card text-center shadow " style="width: 18rem;">
+                <div class="card text-center shadow " style="width: 15rem;">
                     <img src="<?php echo URLROOT; ?>/img/prof.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">TEACHERS</h5>
@@ -77,9 +77,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
 
-                <div class="card text-center shadow " style="width: 18rem;">
+                <div class="card text-center shadow " style="width: 15rem;">
                     <img src="<?php echo URLROOT; ?>/img/class.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">PARENT</h5>
@@ -93,9 +93,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
 
-                <div class="card text-center shadow " style="width: 18rem;">
+                <div class="card text-center shadow " style="width: 15rem;">
                     <img src="<?php echo URLROOT; ?>/img/student.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">STUDENTS</h5>
@@ -109,9 +109,25 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
 
-                <div class="card text-center shadow " style="width: 18rem;">
+                <div class="card text-center shadow " style="width: 15rem;">
+                    <img src="<?php echo URLROOT; ?>/img/sta.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">CLASS</h5>
+                        <p class="card-text text-center"></p>
+                        <!-- Scrollable modal -->
+                        <!-- Button trigger modal -->
+                        <a href=" <?php echo URLROOT; ?>/ClassController/showClass"><button type="button"
+                                class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                click to show Class
+                            </button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+
+                <div class="card text-center shadow " style="width: 15rem;">
                     <img src="<?php echo URLROOT; ?>/img/sta.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">STATISTICS</h5>

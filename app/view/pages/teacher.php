@@ -131,10 +131,11 @@
                 <?php endif; ?>
                 <?php endforeach; ?>
                 <th>
-                    <a href=""><button type="button" name="update" class="btn btn-warning">Edit
+                    <a href="<?php echo URLROOT; ?>/TeacherController/update/<?php echo $row->id; ?>"><button
+                            type="button" name="update" class="btn btn-warning">Edit
                         </button></a>
 
-                    <a href="<?php echo URLROOT; ?>/TeacherController/deleteTeacher?id=<?php echo $row->id; ?>"><button
+                    <a href="<?php echo URLROOT; ?>/TeacherController/deleteTeacher/<?php echo $row->id; ?>"><button
                             type="button" name="delete" class="btn btn-danger">
                             Delete
                         </button></a>

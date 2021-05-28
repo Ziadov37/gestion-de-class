@@ -7,9 +7,9 @@ body{
     background: rgb(219,226,226);
 }
 .row{
-    background: white;
+   
     border-radius: 3px;
-    box-shadow:12px 12px 22px grey;
+    box-shadow: 47px 12px 23px grey;
 }
 .btn1{
     border: none;

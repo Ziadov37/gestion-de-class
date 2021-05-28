@@ -40,32 +40,33 @@
         </div>
     </nav>
 
-    <form>
+    <form action="<?php echo URLROOT; ?>/TeacherController/update/<?php echo $data->id; ?>" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">fullname:</label>
-            <input type="text" name="fullname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter email">
+            <input type="text" name="fullname" class="form-control" value="<?= $data->fullname;  ?>"
+                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">gender</label>
-            <input type="text" name="gender" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input type="text" name="gender" class="form-control" value="<?= $data->gender;  ?>"
+                id="exampleInputPassword1" placeholder="gender">
         </div>
+
         <div class="form-group">
-            <label for="exampleInputPassword1">Job</label>
-            <input type="text" name="Job" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">adress</label>
-            <input type="text" name="adress" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="exampleInputPassword1">metier</label>
+            <input type="text" name="matiere" class="form-control" value="<?= $data->matiere;  ?>"
+                id="exampleInputPassword1" placeholder="Matiere">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">phone</label>
-            <input type="text" name="phone" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input type="text" name="phone" class="form-control" value="<?= $data->phone;  ?>"
+                id="exampleInputPassword1" placeholder="Phone">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">student</label>
-            <input type="text" name="student" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="exampleInputPassword1">class</label>
+            <input type="text" name="idclass" class="form-control" value="<? $data->name;  ?>"
+                id="exampleInputPassword1" placeholder="class">
         </div>
 
         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
