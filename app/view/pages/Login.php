@@ -37,11 +37,10 @@
                                     echo $data['email_err'];
                                 } ?>
                                 <input type="email" placeholder="Email" name="email" id="email"
-                                    class="form-control my-3 p-4 <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>">
-                                <!-- <div id="email-error"></div> -->
-                                <div class=" alert alert-danger custom-alert"
+                                    class="form-control email my-3 p-4 <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>">
+                                <div class="alert alert-danger custom-alert"
                                     style="padding: 5px 10px;margin-bottom: 5px;display: none;">
-                                    The email can't be Empty
+                                    The username can't be Empty
                                 </div>
                             </div>
                         </div>
@@ -49,7 +48,6 @@
                             <div class="col-lg-7">
                                 <input type="password" placeholder="password" name="password" id="password"
                                     class=" password form-control my-3 p-4 <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>">
-                                <!-- <div id="password-error"></div> -->
                                 <div class="alert alert-danger custom-alert"
                                     style="padding: 5px 10px;margin-bottom: 5px;display: none;">
                                     The password can't be Empty
@@ -89,7 +87,7 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-    <script src="<?php echo URLROOT; ?>/js/jquery-3.6.0.slim.min.js"></script>
+    <script src="<?php echo URLROOT; ?>/js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
     </script>

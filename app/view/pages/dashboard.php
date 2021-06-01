@@ -134,8 +134,8 @@
                         <p class="card-text text-center"></p>
                         <!-- Scrollable modal -->
                         <!-- Button trigger modal -->
-                        <a href=""><button type="button" class="btn btn-primary " data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop">
+                        <a href=" <?php echo URLROOT; ?>/StatController/showStat"><button type="button"
+                                class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                 click to show statics
                             </button></a>
                     </div>

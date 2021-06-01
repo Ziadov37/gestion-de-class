@@ -4,6 +4,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
+        // instanciation objet //
         $this->userModel = $this->model('AdminModel');
     }
 
